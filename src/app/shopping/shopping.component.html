@@ -1,0 +1,56 @@
+<!--  cart modal  -->
+<div class="cart-modal-overlay">
+<div class="cart-modal">
+    <i id="close-btn" class="fas fa-times"></i>
+    <h1 class="cart-is-empty">Cart is empty</h1>
+    <div class="product-rows">
+    </div>
+    <div class="total">
+        <h1 class="cart-total">TOTAL</h1>
+        <span class="total-price">$0</span>
+            <button class="purchase-btn">PURCHASE</button>
+    </div>
+    </div>
+</div>
+<!--   end of cart modal -->
+  <div class="cart-btn">
+    <i id="cart" class="fas fa-shopping-cart"></i>
+      <span class ="cart-quantity">0</span>
+  </div>
+<!--  products  -->
+  <div class="items-container">
+    <div *ngFor="let product of productList"  [ngClass]="'card'" >
+      <img class="product-image" [src]="product.imageUrl" alt="">
+        <button class="add-to-cart" (click)="addToCart(product)">Add to cart</button>
+          <span class="product-price">${{product.price}}</span>
+    </div>
+  </div>
+<!--  end of products  -->
+
+<!-- MY CUSTOM CART WITH TABLE -->
+  <div class="my-cart-div" *ngIf="cartProducts.length > 0">
+      <table >
+            <tr>
+                <th>Sr. No</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+          <tbody id="my-cart-table-body">
+            <tr *ngFor="let item of cartProducts;let i= index">
+              <td class="sno">{{i+1}}</td>
+              <td class="image"><img class="cart-product-image" [src]="item.product.imageUrl" alt=""></td>
+              <td class="price">${{item.amount}}</td>
+              <td class="quantity">{{item.quantity}}</td>
+              <td class="actions">
+                <button class="add-quantity" (click)="addItemQuantity(i)"><i class="fa fa-plus"></i>&nbsp;Add</button>
+                <button class="remove-quantity" (click)="removeItemQuantity(i)"><i class="fa fa-minus"></i>&nbsp;Remove</button>
+                <button class="cancel" (click)="deleteItem(i)"><i class="fa fa-trash"></i>&nbsp;Delete</button>
+              </td>
+            </tr>
+           
+          </tbody>
+      </table>
+  </div>
+  

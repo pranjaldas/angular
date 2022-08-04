@@ -1,0 +1,23 @@
+.center {
+	width: 60%;
+	margin: 10px auto 100px;
+	display: table;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 20px;
+}
+.error__msg{
+	font-size: 10px;
+	color: red;
+	text-align: right;
+}
+.form__input{
+	width: 100%;
+}
+.display-table{
+	width: 100%;
+	text-align: center;
+}
+.display-table tr td{
+	border: 1px solid black;
+}
