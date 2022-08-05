@@ -1,0 +1,13 @@
+<div class="">
+  <div class="card" *ngIf="product != null" style="margin: auto;width: 30%">
+    <img class="product-image" [src]="product.imageUrl" alt="">
+        <span class="product-price">${{product.price}}</span>
+  </div>
+</div>
+<div class="items-container">
+  <div *ngFor="let product of productList"  [ngClass]="'card'" >
+    <img class="product-image" [src]="product.imageUrl" alt="">
+      <button class="add-to-cart" (click)="viewProduct(product.productId)" >View Item</button>
+        <span class="product-price">${{product.price}}</span>
+  </div>
+</div>
