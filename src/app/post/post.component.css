@@ -1,0 +1,16 @@
+.center{
+    display: block;
+    width: 100%;
+    margin: 10px auto 100px;
+    background-color:#fff;
+    padding:0px 10px 10px 10px;
+    border-radius:10px;
+}
+table tr th{
+    background-color:coral;
+    text-align: center;
+    border: 1px solid black;
+}
+table tr td{
+    border: 1px solid black;
+}

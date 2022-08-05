@@ -1,0 +1,32 @@
+<div class="center">
+  <h1 class="heading"><strong>HTTP </strong>Demo</h1>
+  <div class="form-group">
+    <button type="button" (click)="getPosts()">Get Posts</button>
+  </div>
+  <div *ngIf="loading">loading...</div>
+
+  <div *ngIf="errorMessage" class="alert alert-warning">
+    <strong>Warning!</strong> {{errorMessage | json}}
+  </div>
+  <table class='table' *ngIf="posts.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Post Title</th>
+        <th>Post Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts;">
+        <td>{{post.id}}</td>
+        <td>{{post.userId}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pre>{{posts | json}}</pre>
+
+</div>
